@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo SWITCH</title>
+</head>
+<body>
+    <script>
+        var nota = 7;
+
+        // Nota: Este ejemplo NO es equivalente al ejemplo anterior
+        switch (nota) {
+            case 10:
+            case 9:
+                calificacion = "Sobresaliente";
+                break;
+            case 8:
+            case 7:
+                calificacion = "Notable";
+                break;
+            case 6:
+                calificacion = "Bien";
+                break;
+            case 5:
+                calificacion = "Suficiente";
+                break;
+            case 4:
+            case 3:
+            case 2:
+            case 1:
+            case 0:
+                calificacion = "Insuficiente";
+                break;
+            default: // Cualquier otro caso
+                calificacion = "Nota errónea";
+                break;
+        }
+
+        alert("He obtenido un " + calificacion);
+    </script>
+</body>
+</html>
