@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+
+<body>
+    <script>
+        function factorializar(numero) {
+            let factorial = 1;
+
+            for (let a = numero; a > 1; a--) {
+                factorial *= a;
+            }
+
+            return factorial;
+        }
+
+        alert(factorializar(5));
+    </script>
+</body>
+
+</html>
