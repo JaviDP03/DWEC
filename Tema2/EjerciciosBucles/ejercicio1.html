@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <form>
+        <p>
+            <label for="diametro">Diámetro: </label>
+            <input type="number" id="diametro" name="diametro">
+        </p>
+        <p>
+            <label for="grosor">Grosor: </label>
+            <input type="number" id="grosor" name="grosor">
+        </p>
+        <button type="button" onclick="calculosRueda()">Calcular</button>
+    </form>
+    <script>
+        function calculosRueda() {
+            let diametro = document.getElementById("diametro").value;
+            let grosor = document.getElementById("grosor").value;
+
+            if (diametro > 1.4) {
+                document.write("La rueda es para un vehículo grande.");
+                if (grosor < 0.4) {
+                    document.write("<br>El grosor para esta rueda es inferior al recomendado.");
+                }
+            } else if (diametro <= 1.4) {
+                document.write("La rueda es para un vehículo mediano.");
+                if (diametro > 0.8 && grosor < 0.25) {
+                    document.write("<br>El grosor para esta rueda es inferior al recomendado.");
+                }
+            } else {
+                document.write("La rueda es para un vehículo pequeño.");
+            }
+        }
+    </script>
+</body>
+
+</html>

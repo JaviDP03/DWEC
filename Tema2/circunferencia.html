@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circunferencia</title>
+</head>
+
+<body>
+    <script>
+        var radio = 5;
+
+        if (radio <= 0) {
+            alert("Esta circunferencia es imaginaria porque su radio es negativo o igual que cero")
+        } else {
+            var area = Math.PI * Math.pow(radio, 2);
+            var longitud = 2 * Math.PI * radio;
+
+            document.write("<h4>Circunferencia con radio " + radio + "</h4>");
+            document.write("El área de esta circunferencia es " + area.toFixed(2) + "<br>");
+            document.write("La longitud de esta circunferencia es " + longitud.toFixed(2));
+        }
+    </script>
+</body>
+
+</html>
