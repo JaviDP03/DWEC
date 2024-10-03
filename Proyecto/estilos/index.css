@@ -51,7 +51,7 @@ aside h2 {
 .contenido {
 	flex: 1;
 	padding: 20px;
-    text-align: center;
+	text-align: center;
 }
 
 h1 {
@@ -59,7 +59,7 @@ h1 {
 }
 
 footer {
-    background-color: #c74b4b;
-    text-align: center;
-    padding: 10px 0;
+	background-color: #c74b4b;
+	text-align: center;
+	padding: 10px 0;
 }

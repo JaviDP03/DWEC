@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deportes Luis Vélez</title>
-    <link rel="stylesheet" href="estilos/estilo_index.css">
+    <link rel="stylesheet" href="estilos/index.css">
+    <script src="scripts/imc.js"></script>
+    <script src="scripts/index.js"></script>
 </head>
 
 <body>
@@ -23,13 +25,15 @@
         <aside>
             <h2>Utilidades</h2>
             <ul>
-                <li><a href="#">Tarea 1</a></li>
+                <li><a href="#" onclick="calcularIMC()">Calcular IMC</a></li>
                 <li><a href="#">Tarea 2</a></li>
                 <li><a href="#">Tarea 3</a></li>
             </ul>
         </aside>
         <div class="contenido">
             <h1>BIENVENIDO</h1>
+            <br>
+            <span id="resultado"></span>
         </div>
         <aside>
             <h2>Columna 2</h2>
@@ -43,7 +47,6 @@
     <footer>
         <p>&copy;<span id="anno"></span> Deportes Luis Vélez</p>
     </footer>
-    <script>document.getElementById('anno').textContent = new Date().getFullYear();</script>
 </body>
 
 </html>
