@@ -12,8 +12,8 @@ function calcularIMC() {
         return calcularIMC();
     }
 
-    if (peso <= 0 || altura <= 0) {
-        alert("Los valores deben ser mayores.");
+    if (peso <= 0 || altura <= 0 || peso > 500 || altura > 300) {
+        alert("Los valores no son válidos.");
         return calcularIMC();
     }
 
@@ -39,5 +39,15 @@ function calcularIMC() {
         resultado = "Obeso (Tipo III)";
     }
 
-    document.getElementById("resultado").innerHTML = "<h4>Calculadora de IMC</h4><p>Tu IMC es: " + imc + " - " + resultado + "</p>";
+    var total = "<h4>Calculadora de IMC</h4><p>Tu IMC es: " + imc + " - " + resultado + "</p><hr>";
+    total += resultado == "Infrapeso (delgadez severa)" ? "<strong><p>Infrapeso (delgadez severa) &lt; 16</p></strong>" : "<p>Infrapeso (delgadez severa) &lt; 16</p>";
+    total += resultado == "Infrapeso (delgadez moderada)" ? "<strong><p>Infrapeso (delgadez moderada) 16 - 16.99</p></strong>" : "<p>Infrapeso (delgadez moderada) 16 - 16.99</p>";
+    total += resultado == "Infrapeso (delgadez aceptable)" ? "<strong><p>Infrapeso (delgadez aceptable) 17 - 18.49</p></strong>" : "<p>Infrapeso (delgadez aceptable) 17 - 18.49</p>";
+    total += resultado == "Peso normal" ? "<strong><p>Peso normal 18.5 - 24.99</p></strong>" : "<p>Peso normal 18.5 - 24.99</p>";
+    total += resultado == "Sobrepeso" ? "<strong><p>Sobrepeso 25 - 29.99</p></strong>" : "<p>Sobrepeso 25 - 29.99</p>";
+    total += resultado == "Obeso (Tipo I)" ? "<strong><p>Obeso (Tipo I) 30 - 34.99</p></strong>" : "<p>Obeso (Tipo I) 30 - 34.99</p>";
+    total += resultado == "Obeso (Tipo II)" ? "<strong><p>Obeso (Tipo II) 35 - 39.99</p></strong>" : "<p>Obeso (Tipo II) 35 - 39.99</p>";
+    total += resultado == "Obeso (Tipo III)" ? "<strong><p>Obeso (Tipo III) &gt; 40</p></strong>" : "<p>Obeso (Tipo III) &gt; 40</p>";
+
+    document.getElementById("resultado").innerHTML = total;
 }

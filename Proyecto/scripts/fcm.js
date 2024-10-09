@@ -11,8 +11,8 @@ function calcularFCM() {
       return calcularFCM();
 
    }
-   if (edad <= 0) {
-      alert("La edad debe ser mayor.");
+   if (edad <= 0 || edad > 120) {
+      alert("La edad no es válida.");
       return calcularFCM();
    }
 

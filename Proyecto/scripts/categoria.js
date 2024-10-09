@@ -18,7 +18,10 @@ function calcularCategoria() {
     var edad = annoActual - annoNacimiento;
     var categoria;
 
-    if (edad < 9) {
+    if (edad < 6) {
+        alert("El año no es adecuado.");
+        return calcularCategoria();
+    } else if (edad < 9) {
         categoria = "Prebenjamín";
     } else if (edad < 11) {
         categoria = "Benjamín";
@@ -34,7 +37,7 @@ function calcularCategoria() {
         categoria = "Senior";
     }
 
-    var resultado = "<p>Tu categoria es " + categoria + "</p>";
+    var resultado = "<p>Tu categoria es " + categoria + "</p><hr>";
     resultado += categoria == "Prebenjamín" ? "<strong><p>Prebenjamín 6-8 años</p></strong>" : "<p>Prebenjamín 6-8 años</p>";
     resultado += categoria == "Benjamín" ? "<strong><p>Benjamín 9-10 años</p></strong>" : "<p>Benjamín 9-10 años</p>";
     resultado += categoria == "Alevín" ? "<strong><p>Alevín 11-12 años</p></strong>" : "<p>Alevín 11-12 años</p>";

@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deportes Luis Vélez</title>
     <link rel="stylesheet" href="estilos/base.css">
+    <script src="scripts/imc.js"></script>
+    <script src="scripts/fcm.js"></script>
+    <script src="scripts/categoria.js"></script>
+    <script src="scripts/horario.js"></script>
 </head>
 
 <body>
@@ -20,18 +24,18 @@
     </header>
     <br>
     <main>
-        <div class="contenido">
-            <h1>BIENVENIDO</h1>
-            <br>
-        </div>
         <aside>
-            <h2>Columna 2</h2>
+            <h2>Utilidades</h2>
             <ul>
-                <li><a href="#">Tarea 1</a></li>
-                <li><a href="#">Tarea 2</a></li>
-                <li><a href="#">Tarea 3</a></li>
+                <li><a href="#" onclick="calcularIMC()">Calcular IMC</a></li>
+                <li><a href="#" onclick="calcularFCM()">Calcular FCM</a></li>
+                <li><a href="#" onclick="calcularCategoria()">Calcular categoría</a></li>
+                <li><a href="#" onclick="imprimirHorario()">Mostrar horario</a></li>
             </ul>
         </aside>
+        <div class="contenido">
+            <span id="resultado"></span>
+        </div>
     </main>
     <footer>
         <p>&copy;2024 Deportes Luis Vélez</p>
