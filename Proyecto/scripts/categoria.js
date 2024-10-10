@@ -1,19 +1,26 @@
 function calcularCategoria() {
+    // Entrada de datos
     var annoNacimiento = prompt("Introduce tu año de nacimiento:");
+
+    // Comprobaciones
+    // Datos nulos
     if (annoNacimiento == null) {
         return;
     }
 
+    // Datos no numéricos
     if (isNaN(annoNacimiento)) {
         alert("Debes introducir un año válido.");
         return calcularCategoria();
     }
 
+    // Datos fuera de rango
     if (annoNacimiento < 1905) {
         alert("El año debe ser mayor.");
         return calcularCategoria();
     }
 
+    // Cálculos
     var annoActual = new Date().getFullYear();
     var edad = annoActual - annoNacimiento;
     var categoria;
@@ -37,6 +44,7 @@ function calcularCategoria() {
         categoria = "Senior";
     }
 
+    // Resultado
     var resultado = "<p>Tu categoria es " + categoria + "</p><hr>";
     resultado += categoria == "Prebenjamín" ? "<strong><p>Prebenjamín 6-8 años</p></strong>" : "<p>Prebenjamín 6-8 años</p>";
     resultado += categoria == "Benjamín" ? "<strong><p>Benjamín 9-10 años</p></strong>" : "<p>Benjamín 9-10 años</p>";

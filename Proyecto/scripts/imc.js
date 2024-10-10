@@ -1,22 +1,27 @@
 function calcularIMC() {
+    // Entrada de datos
     var peso = prompt("Introduce tu peso en kg:");
     var altura = prompt("Introduce tu altura en cm:");
     
+    // Comprobaciones
+    // Datos nulos
     if (peso == null && altura == null) {
         return;
-
     }
     
+    // Datos no numéricos
     if (isNaN(peso) || isNaN(altura)) {
         alert("Debes introducir valores numéricos.");
         return calcularIMC();
     }
 
+    // Datos fuera de rango
     if (peso <= 0 || altura <= 0 || peso > 500 || altura > 300) {
         alert("Los valores no son válidos.");
         return calcularIMC();
     }
 
+    // Cálculos
     var imc = peso / Math.pow(altura / 100, 2);
     imc = imc.toFixed(2);
 
@@ -39,6 +44,7 @@ function calcularIMC() {
         resultado = "Obeso (Tipo III)";
     }
 
+    // Resultado
     var total = "<h4>Calculadora de IMC</h4><p>Tu IMC es: " + imc + " - " + resultado + "</p><hr>";
     total += resultado == "Infrapeso (delgadez severa)" ? "<strong><p>Infrapeso (delgadez severa) &lt; 16</p></strong>" : "<p>Infrapeso (delgadez severa) &lt; 16</p>";
     total += resultado == "Infrapeso (delgadez moderada)" ? "<strong><p>Infrapeso (delgadez moderada) 16 - 16.99</p></strong>" : "<p>Infrapeso (delgadez moderada) 16 - 16.99</p>";

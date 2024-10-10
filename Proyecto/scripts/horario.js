@@ -1,4 +1,5 @@
 function imprimirHorario() {
+    // Función para crear el horario de mañana
     function horarioMañana() {
         var horario = "<table><tr><th>Hora</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th></tr>";
         horario += "<tr><td>9:00-11:00</td><td>Tenis</td><td>Tenis</td><td>Tenis</td><td>Tenis</td><td>Tenis</td></tr>";
@@ -8,6 +9,7 @@ function imprimirHorario() {
         return "<h3>Horario de mañana</h3>" + horario;
     }
 
+    // Función para crear el horario de tarde
     function horarioTarde() {
         var horario = "<table><tr><th>Hora</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th><th>Sábado</th><th>Domingo</th></tr>";
         horario += "<tr><td>16:00-17:00</td><td>Baloncesto</td><td>Baloncesto</td><td>Baloncesto</td><td>Baloncesto</td><td>Baloncesto</td><td>Baloncesto</td><td>Baloncesto</td></tr>";
@@ -19,5 +21,6 @@ function imprimirHorario() {
         return "<h3>Horario de tarde</h3>" + horario;
     }
 
+    // Resultado
     document.getElementById("resultado").innerHTML = horarioMañana() + "<br>" + horarioTarde();
 }
