@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <script>
+        function calcularPotencia() {
+            let base = prompt("Introduce la base:");
+            let exponente = prompt("Introduce el exponente:")
+            return "<p>La potencia de " + base + " elevado a " + exponente + " es: " + Math.pow(base, exponente) + "</p>";
+        }
+
+        function calcularRaiz() {
+            let numero = prompt("Introduce un número:");
+            return "<p>La raíz de " + numero + " es: " + Math.sqrt(numero, 2) + "</p>";
+        }
+
+        function redondearNumero() {
+            let numero = prompt("Introduce un número:");
+            return "<p>El redondeo de " + numero + " es: " + Math.round(numero) + "</p>" + 
+            "<p>El redondeo hacia arriba de " + numero + " es: " + Math.ceil(numero) + "</p>" +
+            "<p>El redondeo hacia abajo de " + numero + " es: " + Math.floor(numero) + "</p>";
+        }
+
+        function calcularTrigonometria() {
+            let angulo = prompt("Introduce un ángulo (0-360):");
+
+            radianes = angulo * Math.PI / 180;
+
+            seno = Math.round(Math.sin(radianes));
+            coseno = Math.round(Math.cos(radianes));
+            tangente = Math.round(Math.tan(radianes));
+
+            tangente = (tangente > 1) ? "&#8734;" : tangente;
+
+            return "<p>El seno de " + angulo + " es: " + seno + "</p>" +
+            "<p>El coseno de " + angulo + " es: " + coseno + "</p>" +
+            "<p>La tangente de " + angulo + " es: " + tangente + "</p>";
+        }
+
+        function elegirOpcion() {
+            let opcion = prompt("Elige una de las opciones:");
+
+            switch (parseInt(opcion)) {
+                case 1:
+                    document.getElementById("resultado").innerHTML = calcularPotencia();
+                    break;
+                case 2:
+                    document.getElementById("resultado").innerHTML = calcularRaiz();
+                    break;
+                case 3:
+                    document.getElementById("resultado").innerHTML = redondearNumero();
+                    break;
+                case 4:
+                    document.getElementById("resultado").innerHTML = calcularTrigonometria();
+                    break;
+                default:
+                    alert("Opción no válida");
+                    break;
+            }
+        }
+    </script>
+    <h2>Menú matemático</h2>
+    <ol>
+        <li>Potencia</li>
+        <li>Raíz</li>
+        <li>Redondeo</li>
+        <li>Trigonometría</li>
+    </ol>
+    <button type="button" name="eleccion" onclick="elegirOpcion()">Elegir</button>
+    <span id="resultado"></span>
+</body>
+
+</html>
