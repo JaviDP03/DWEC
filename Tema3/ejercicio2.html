@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <form>
+        <p><input type="number" id="numero" name="numero" placeholder="Introduce un número"></p>
+    </form>
+    <button onclick="calculosNumero()">Calcular</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calculosNumero() {
+            let numero = parseFloat(document.getElementById("numero").value);
+
+            let resultado = "<p>Valor exponencial: " + numero.toExponential() + "</p>";
+            resultado += "<p>Con 4 decimales: " + numero.toFixed(4) + "</p>";
+            resultado += "<p>En binario: " + numero.toString(2) + "</p>";
+            resultado += "<p>En octal: " + numero.toString(8) + "</p>";
+            resultado += "<p>En hexadecimal: " + numero.toString(16).toUpperCase() + "</p>";
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</body>
+
+</html>
