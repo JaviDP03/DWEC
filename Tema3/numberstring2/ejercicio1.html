@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <script>
+        function listarNumeros() {
+            let numeros = new Array();
+            let numeroIntroducido = 0;
+
+            do {
+                numeroIntroducido = parseInt(prompt("Introduce un número entero:"));
+                if (isNaN(numeroIntroducido) || numeroIntroducido % 1 !== 0) {
+                    alert("Debes introducir un número entero.");
+                } else if (numeroIntroducido != 0) {
+                    numeros.push(numeroIntroducido);
+                }
+            } while (numeroIntroducido != 0);
+
+            if (numeros.length == 0) {
+                document.getElementById("resultado").innerHTML = "<p>No se ha introducido ningún número.</p>";
+                return;
+            }
+
+            let numerosOrdenados = numeros.sort((a, b) => b - a);
+            let resultado = "<p>Números en orden descendente: ";
+            numerosOrdenados.forEach(numero => {
+                resultado += numero + " ";
+            });
+            resultado += "</p>";
+
+            let numeroMayor = numerosOrdenados[0];
+            let numeroMenor = numerosOrdenados[numerosOrdenados.length - 1];
+
+            let ocurrencias1 = 0;
+            let ocurrencias2 = 0;
+            for (let i = 0; i < numerosOrdenados.length; i++) {
+                if (numeroMayor == numerosOrdenados[i]) {
+                    ocurrencias1++;
+                }
+
+                if (numeroMenor == numerosOrdenados[i]) {
+                    ocurrencias2++;
+                }
+            }
+
+            resultado += "<p>Número mayor: " + numeroMayor + " - " + ocurrencias1 + (ocurrencias1 == 1 ? " vez</p>" : " veces</p>");
+            resultado += "<p>Número menor: " + numeroMenor + " - " + ocurrencias2 + (ocurrencias2 == 1 ? " vez</p>" : " veces</p>");
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+    <h2>Número enteros</h2>
+    <button onclick="listarNumeros()">Introduce números enteros</button>
+    <span id="resultado"></span>
+</body>
+
+</html>

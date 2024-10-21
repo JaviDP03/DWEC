@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <script>
+        function calculosNombre() {
+            let nombre = prompt("Introduce tu nombre y apellidos:");
+            let longitud = 0;
+            let minusculas = nombre.toLowerCase();
+            let mayusculas = nombre.toUpperCase();
+            let nombreSeparado = nombre.split(" ");
+            let nombreUsuario = (nombreSeparado[0].charAt(0) + nombreSeparado[1] + nombreSeparado[2].charAt(0)).toLowerCase();
+            let nombreUsuario2 = (nombreSeparado[0].substring(0, 3) + nombreSeparado[1].substring(0, 2) + nombreSeparado[2].substring(0, 2)).toLowerCase();
+
+            for (let i = 0; i < nombre.length; i++) {
+                if (nombre[i] != " ") {
+                    longitud++;
+                }
+            }
+            
+            let resultado = "<p>Tu nombre tiene " + longitud + " caracteres.</p>";
+            resultado += "<p>En minúsculas: " + minusculas + "</p>";
+            resultado += "<p>En mayúsculas: " + mayusculas + "</p>";
+            resultado += "<p>Nombre: " + nombreSeparado[0] + "</p>";
+            resultado += "<p>Apellido 1: " + nombreSeparado[1] + "</p>";
+            resultado += "<p>Apellido 2: " + nombreSeparado[2] + "</p>";
+            resultado += "<p>Nombre de usuario: " + nombreUsuario + "</p>";
+            resultado += "<p>Nombre de usuario 2: " + nombreUsuario2 + "</p>";
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+    <h2>Datos de tu nombre</h2>
+    <button onclick="calculosNombre()">Introduce un nombre</button>
+    <span id="resultado"></span>
+</body>
+</html>
