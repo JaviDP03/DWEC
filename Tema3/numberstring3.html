@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio NumberString 3</title>
+</head>
+
+<body>
+    <script>
+        function agruparPalabras() {
+            let listaPalabras = new Array();
+            let finBucle = false;
+            let palabra = "";
+            let resultado = "";
+
+            while (!finBucle) {
+                palabra = prompt("Introduce una palabra:");
+
+                if (palabra == null) {
+                    return;
+                } else if (!isNaN(parseFloat(palabra))) {
+                    alert("Has introducido un número");
+                } else if (palabra == "") {
+                    finBucle = true;
+                } else {
+                    listaPalabras.push(palabra);
+                }
+            }
+
+            if (listaPalabras.length == 0) {
+                resultado = "<p>No se han introducido palabras";
+            } else {
+                resultado = "<h3>Datos de la lista</h3><ul>";
+                resultado += "<li>Primera palabra: " + listaPalabras[0] + "</li>"
+                resultado += "<li>Última palabra: " + listaPalabras[listaPalabras.length - 1] + "</li>"
+                resultado += "<li>Número de palabras: " + listaPalabras.length + "</li>";
+                resultado += "<li>Lista ordenada: " + listaPalabras.sort() + "</li>";
+            }
+            
+            let nuevaVentana = window.open("", "Datos de la lista", "width=800, height=600");
+            nuevaVentana.document.write(resultado);
+        }
+    </script>
+    <h2>Lista de palabras</h2>
+    <button onclick="agruparPalabras()">Introducir palabras</button>
+</body>
+
+</html>

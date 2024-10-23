@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <script>
+        function calcularMedia(numeros) {
+            let media = 0;
+
+            numeros.forEach(numero => {
+                media += numero;
+            });
+
+            media /= 3;
+
+            if (media < 5) {
+                return "suspenso";
+            }
+
+            return "aprobado";
+        }
+
+        function calculadoraAprobado() {
+            let listaNumeros = new Array();
+            let contador = 0;
+            let numero = 0;
+
+            while (contador < 3) {
+                numero = prompt("Introduce una nota:");
+
+                if (numero == null) {
+                    return;
+                } else if (isNaN(numero) || numero == "") {
+                    alert("El valor introducido no es un número.");
+                } else {
+                    listaNumeros.push(parseFloat(numero));
+                    contador++;
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = "<p>Estás " + calcularMedia(listaNumeros) + "</p>";
+        }
+    </script>
+    <h2>Calculadora de aprobado</h2>
+    <button onclick="calculadoraAprobado()">Calcular</button>
+    <span id="resultado"></span>
+</body>
+
+</html>
