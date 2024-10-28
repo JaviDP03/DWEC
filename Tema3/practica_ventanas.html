@@ -17,13 +17,17 @@
         var nuevaVentana;
 
         function abrirVentana() {
-            var textoVentana = "<h2>Nueva ventana</h2>";
-            textoVentana += "<p>Esta es una nueva ventana</p>";
-            textoVentana += "<button onclick='window.close()'>Cerrar ventana</button>";
+            if (!nuevaVentana || nuevaVentana.closed) {
+                var textoVentana = "<h2>Nueva ventana</h2>";
+                textoVentana += "<p>Esta es una nueva ventana</p>";
+                textoVentana += "<button onclick='window.close()'>Cerrar ventana</button>";
 
-            if (confirm("¿Quieres abrir una nueva ventana?")) {
-                nuevaVentana = window.open("", "Nueva ventana", "toolbar=no, location=no, menubar=no, resizable=no, width=200, height=80, screenX=500, screenY=500");
-                nuevaVentana.document.write(textoVentana);
+                if (confirm("¿Quieres abrir una nueva ventana?")) {
+                    nuevaVentana = window.open("", "Nueva ventana", "toolbar=no, location=no, menubar=no, resizable=no, width=200, height=80, screenX=500, screenY=500");
+                    nuevaVentana.document.write(textoVentana);
+                }
+            } else {
+                alert("Ya hay una ventana abierta");
             }
         }
 
@@ -38,9 +42,11 @@
     <h2>Opciones de la ventana</h2>
     <p>Abrir nueva ventana &rarr; <button onclick="abrirVentana()">Pulsa aquí</button></p>
     <p>Cerrar ventana &rarr; <button onclick="cerrarVentana()">Pulsa aquí</button></p>
-    <p>Mover 10 píxeles hacia la derecha y abajo &rarr; <button onclick="nuevaVentana.moveBy(10, 10)">Pulsa aquí</button></p>
+    <p>Mover 10 píxeles hacia la derecha y abajo &rarr; <button onclick="nuevaVentana.moveBy(10, 10)">Pulsa
+            aquí</button></p>
     <p>Mover a 100x 100y &rarr; <button onclick="nuevaVentana.moveTo(100, 100)">Pulsa aquí</button></p>
-    <p>Aumentar 10 píxeles el ancho y largo &rarr; <button onclick="nuevaVentana.resizeBy(10, 10)">Pulsa aquí</button></p>
+    <p>Aumentar 10 píxeles el ancho y largo &rarr; <button onclick="nuevaVentana.resizeBy(10, 10)">Pulsa aquí</button>
+    </p>
     <p>Aumentar a 400x200 &rarr; <button onclick="nuevaVentana.resizeTo(400, 200)">Pulsa aquí</button></p>
     <p>Mover scroll arriba &rarr; <button onclick="nuevaVentana.scrollTo(0, 0)">Pulsa aquí</button></p>
     <p>Mover scroll a 10 píxeles &rarr; <button onclick="nuevaVentana.scrollTo(0, 10)">Pulsa aquí</button></p>
