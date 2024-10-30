@@ -9,18 +9,26 @@
 
 <body onload="crearPlaylist()">
     <script>
-        var resultado = "";
+        var resultado;
+        var playlist;
+        var longitudPlaylist = 0;
+        var contadorCanciones = 0;
         
         function crearPlaylist() {
+            playlist = [];
             var nombrePlaylist = prompt("Introduce el nombre de la playlist");
-            var longitudPlaylist = prompt("Introduce el número de canciones");
-            var playlist = new Array(longitudPlaylist);
-            var contadorCanciones = longitudPlaylist;
+            longitudPlaylist = prompt("Introduce el número de canciones");
+            contadorCanciones = longitudPlaylist;
 
             document.getElementById("nombrePlaylist").innerHTML = nombrePlaylist;
         }
 
         function addCancion() {
+            if (contadorCanciones == 0) {
+                alert("No quedan huecos para añadir canciones");
+                return;
+            }
+
             let cancion = prompt("Introduce el nombre de la canción");
             playlist.push(cancion);
             contadorCanciones--;
@@ -29,22 +37,23 @@
         }
         
         function actualizarPlaylist() {
+            resultado = "";
+
             for (let i = 0; i < longitudPlaylist; i++) {
                 resultado += "<li>" + playlist[i] + "</li>";
             }
     
-            document.getElementById("longitudPlaylist").innerHTML = "Número de canciones: " + contadorCanciones;
+            document.getElementById("longitudPlaylist").innerHTML = "Huecos restantes: " + contadorCanciones;
     
             document.getElementById("playlist").innerHTML = resultado;    
         }
-
     </script>
 
     <h1>Playlist <span id="nombrePlaylist"></span></h1>
     <button onclick="addCancion()">Añadir canción</button>
+    <button onclick="crearPlaylist()">Resetear playlist</button>
     <p id="longitudPlaylist"></p>
-    <ul id="playlist">
-    </ul>
+    <ul id="playlist"></ul>
 </body>
 
 </html>
