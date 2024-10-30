@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina</title>
+</head>
+
+<body>
+    <script>
+        const numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+
+        function adivinarNumero() {
+            let numeroIntroducido = parseInt(document.getElementById("numero").value);
+            let resultado;
+
+            if (numeroAleatorio == numeroIntroducido) {
+                resultado = "¡Enhorabuena! Has adivinado el número";
+            } else if (numeroAleatorio < numeroIntroducido) {
+                resultado = "El número introducido es mayor que el número a adivinar";
+            } else {
+                resultado = "El número introducido es menor que el número a adivinar";
+            }
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+
+    <h2>Adivina el número</h2>
+    <p>Introduce un número del 1 al 10</p>
+    <p><input type="number" id="numero" min="1" max="10" size="10px" value="1"></p>
+    <p><button onclick="adivinarNumero()">Comprobar</button></p>
+    <p id="resultado"></p>
+</body>
+
+</html>

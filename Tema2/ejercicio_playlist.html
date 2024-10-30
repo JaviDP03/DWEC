@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+</head>
+
+<body onload="crearPlaylist()">
+    <script>
+        var resultado = "";
+        
+        function crearPlaylist() {
+            var nombrePlaylist = prompt("Introduce el nombre de la playlist");
+            var longitudPlaylist = prompt("Introduce el número de canciones");
+            var playlist = new Array(longitudPlaylist);
+            var contadorCanciones = longitudPlaylist;
+
+            document.getElementById("nombrePlaylist").innerHTML = nombrePlaylist;
+        }
+
+        function addCancion() {
+            let cancion = prompt("Introduce el nombre de la canción");
+            playlist.push(cancion);
+            contadorCanciones--;
+ 
+            actualizarPlaylist();
+        }
+        
+        function actualizarPlaylist() {
+            for (let i = 0; i < longitudPlaylist; i++) {
+                resultado += "<li>" + playlist[i] + "</li>";
+            }
+    
+            document.getElementById("longitudPlaylist").innerHTML = "Número de canciones: " + contadorCanciones;
+    
+            document.getElementById("playlist").innerHTML = resultado;    
+        }
+
+    </script>
+
+    <h1>Playlist <span id="nombrePlaylist"></span></h1>
+    <button onclick="addCancion()">Añadir canción</button>
+    <p id="longitudPlaylist"></p>
+    <ul id="playlist">
+    </ul>
+</body>
+
+</html>

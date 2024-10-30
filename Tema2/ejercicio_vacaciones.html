@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacaciones</title>
+</head>
+
+<body>
+    <script>
+        var ciudades = ["Sevilla", "Cádiz", "Huelva", "Málaga", "Granada", "Almería", "Jaén", "Córdoba"];
+        
+        function generarCiudad() {
+            let ciudad = ciudades[Math.floor(Math.random() * ciudades.length)];
+
+            document.getElementById("ciudad").innerHTML = "Tu ciudad para pasar las vacaciones es: " + ciudad;
+        }
+    </script>
+
+    <h2>Generador de vacaciones</h2>
+    <p>Genera una ciudad de Andalucía para pasar tus vacaciones &rarr; <button onclick="generarCiudad()">Pulsa
+            aquí</button></p>
+    <p id="ciudad"></p>
+</body>
+
+</html>
