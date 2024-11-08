@@ -1,7 +1,8 @@
 var paises = ["España", "Francia", "Italia", "Portugal", "Alemania", "Estados Unidos", "Sudáfrica", "Japón", "China", "Brasil"];
 
 function menuPaises() {
-    let opcion = parseInt(prompt("Introduce una opción: \n1. Mostrar número paises\n2. Mostrar listado paises\n3. Mostrar intervalo\n4. Añadir país\n5. Borrar país\n0. Salir"));
+    let opcion = parseInt(prompt("Introduce una opción: \n1. Mostrar número paises\n2. Mostrar listado paises\n3. Mostrar intervalo\n4. Añadir país\n" +
+        "5. Borrar país\n6. Consultar país\n0. Salir"));
 
     switch (opcion) {
         case 1:
@@ -18,6 +19,9 @@ function menuPaises() {
             break;
         case 5:
             borrarPais(paises);
+            break;
+        case 6:
+            document.getElementById("resultado").innerHTML = consultarPais(paises);
             break;
         default:
             break;
@@ -120,14 +124,27 @@ function borrarPais(arrayPaises) {
 }
 
 function consultarPais(arrayPaises) {
+    let resultado;
+    let posicion;
+    let pais;
     let opcion = parseInt(prompt("Introduce una opción: \n1. Buscar país\n2. Buscar posición"));
 
     switch (opcion) {
         case 1:
-            
+            pais = prompt("Introduce un país");
+            posicion = arrayPaises.indexOf(pais);
             break;
-    
+        case 2:
+            posicion = parseInt(prompt("Introduce una posición"));
+            pais = arrayPaises[posicion];
+            break;
         default:
             break;
     }
+
+    resultado = "<h2>Consultar un país</h2>";
+    resultado += "<p>Posición: " + posicion + "</p>";
+    resultado += "<p>País: " + pais + "</p>";
+
+    return resultado;
 }
