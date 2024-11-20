@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var horario = [
+            ["DWES", "HLC", "EIE", "Recreo", "EIE", "DWEC", "DIW"],
+            ["DAW", "DAW", "EIE", "Recreo", "EIE", "HLC", "HLC"],
+            ["DWES", "DWES", "DWES", "Recreo", "DIW", "DWEC", "DWEC"],
+            ["DWES", "DWES", "DIW", "Recreo", "DIW", "DWEC", "DWEC"],
+            ["DAW", "DIW", "DIW", "Recreo", "DWEC", "DWES", "DWES"]
+        ];
+    </script>
+    <table>
+        <tr>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+        </tr>
+        <script>
+            for (let i = 0; i < horario[0].length; i++) {
+                document.write("<tr>");
+                for (let j = 0; j < horario.length; j++) {
+                    document.write("<td>" + horario[j][i] + "</td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+</body>
+
+</html>
