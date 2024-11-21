@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coche</title>
+</head>
+
+<body>
+    <script>
+        function Coche(marca, combustible) {
+            // Propiedades
+            this.marca = marca;
+            this.combustible = combustible;
+            this.cantidad = 0;
+            // Métodos
+            this.rellenarDeposito = function (litros) {
+                this.cantidad = litros;
+            };
+        }
+
+        const cocheDeMartin = new Coche("Volkswagen Golf", "gasolina");
+        const cocheDeSilvia = new Coche("Mercedes SLK", "diesel");
+
+        document.write("<br/>El coche de Martin es un: " + cocheDeMartin.marca + " a " + cocheDeMartin.combustible);
+        document.write("<br/>El coche de Silvia es un: " + cocheDeSilvia.marca + " a " + cocheDeSilvia.combustible);
+        // Imprimirá:
+        // El coche de Martin es un: Volkswagen Golf a gasolina
+        // El coche de Silvia es un: Mercedes SLK a diesel
+        // Ahora modificamos la marca y el combustible del coche de Martin:
+        cocheDeMartin.marca = "BMW X5";
+        cocheDeMartin.combustible = "diesel";
+        document.write("<br/>El coche de Martin es un: " + cocheDeMartin.marca + " a " + cocheDeMartin.combustible);
+        // Imprimirá: El coche de Martin es un: BMW X5 a diesel
+
+        cocheDeMartin.rellenarDeposito(35);
+        document.write("<br/>El coche de Martin tiene " + cocheDeMartin.cantidad + " litros de " +
+            cocheDeMartin.combustible + " en el depósito.");
+        // Imprimirá
+        // El coche de Martin tiene 35 litros de diesel en el depósito.
+    </script>
+</body>
+
+</html>
