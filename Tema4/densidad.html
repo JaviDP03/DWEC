@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Densidad</title>
+    <script type="text/javascript">
+        // Constructor Objeto
+        function Objeto(masa, volumen) {
+            this.masa = masa;
+            this.volumen = volumen;
+
+            // Métodos
+            this.densidad = function() {
+                return this.masa / this.volumen;
+            }
+        }
+
+        const objeto1 = new Objeto(10, 5);
+        document.write("La densidad del objeto1 es: " + objeto1.densidad() + " kg/m<sup>3</sup>");
+    </script>
+</head>
+<body>
+</body>
+</html>

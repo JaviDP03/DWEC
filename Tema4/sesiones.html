@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesiones</title>
+    <script type="text/javascript">
+        // Constructor
+        function Persona(nombre, sesiones) {
+            this.nombre = nombre;
+            this.sesiones = sesiones;
+            this.numSesiones = sesiones.length;
+
+            // Métodos
+            this.anotar = function (sesion) {
+                this.sesiones.push(sesion);
+                this.numSesiones++;
+            }
+
+            this.media = function () {
+                let suma = 0;
+
+                for (let i = 0; i < this.numSesiones; i++) {
+                    suma += sesiones[i];
+                }
+
+                return suma / this.numSesiones;
+            }
+        }
+
+        const persona1 = new Persona("Juan", [5, 6, 7, 8, 9]);
+
+        document.write(persona1.nombre);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

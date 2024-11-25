@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumno</title>
+    <script type="text/javascript">
+        // Constructor
+        function Alumno(nombre, a1, a2, a3) {
+            this.nombre = nombre;
+            this.a1 = a1;
+            this.a2 = a2;
+            this.a3 = a3;
+
+            // Métodos
+            this.media = function () {
+                return (this.a1 + this.a2 + this.a3) / 3;
+            }
+        }
+
+        const alumno1 = new Alumno("Pepe", 4, 5, 6);
+        document.write("Nota media de " + alumno1.nombre + ": " + alumno1.media());
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
