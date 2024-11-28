@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descuento</title>
+    <script type="text/javascript">
+        function Producto() {
+            this.precio = parseFloat(prompt("Introduce el precio del producto"));
+            this.descuento = parseInt(prompt("Introduce el descuento(%)"));
+
+            this.neto = function () {
+                return this.precio - (this.precio * this.descuento / 100);
+            }
+        }
+
+        const p1 = new Producto();
+        document.write("El precio neto del producto 1 es: " + p1.neto() + "€");
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

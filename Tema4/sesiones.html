@@ -30,8 +30,9 @@
         }
 
         const persona1 = new Persona("Juan", [5, 6, 7, 8, 9]);
+        persona1.anotar(10);
 
-        document.write(persona1.nombre);
+        document.write(persona1.nombre + " ha hecho una media de " + persona1.media() + " km en " + persona1.numSesiones + " sesiones.");
     </script>
 </head>
 
