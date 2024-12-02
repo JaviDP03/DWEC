@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificaciones</title>
+    <script>
+        var clasificacion = ["Ana", "Pedro", "Raúl", "Celia", "María", "Antonio"];
+
+        clasificacion.splice(2, 2, "Celia", "Raúl");
+        clasificacion.pop();
+        clasificacion.splice(1, 0, "Roberto", "Amaya");
+        clasificacion.unshift("Marta");
+
+        document.write("<h1>Clasificación</h1>");
+        document.write("<ol>");
+        for (var i = 0; i < clasificacion.length; i++) {
+            document.write("<li>" + clasificacion[i] + "</li>");
+        }
+        document.write("</ol>");
+    </script>
+</head>
+<body>
+</body>
+</html>
