@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clasificaciones</title>
-    <script>
+    <script type="text/javascript">
         var clasificacion = ["Ana", "Pedro", "Raúl", "Celia", "María", "Antonio"];
 
-        clasificacion.splice(2, 2, "Celia", "Raúl");
-        clasificacion.pop();
-        clasificacion.splice(1, 0, "Roberto", "Amaya");
+        clasificacion.splice(clasificacion.indexOf("Raúl"), 2, "Celia", "Raúl");
+        clasificacion.splice(clasificacion.indexOf("Antonio"), 1);
+        clasificacion.splice(clasificacion.indexOf("Pedro"), 0, "Roberto", "Amaya");
         clasificacion.unshift("Marta");
 
         document.write("<h1>Clasificación</h1>");
@@ -20,6 +21,8 @@
         document.write("</ol>");
     </script>
 </head>
+
 <body>
 </body>
+
 </html>
