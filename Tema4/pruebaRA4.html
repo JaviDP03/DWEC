@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba RA4</title>
+    <script type="text/javascript">
+        // Ejercicio 1
+        document.write("<h2>Ejercicio 1</h2>")
+        var numeros = [4, 12, 9, 15, 2, 21];
+        var numerosFiltrados = [];
+
+        for (let i = 0; i < numeros.length; i++) {
+            if (numeros[i] <= 10) {
+                numerosFiltrados.push(numeros[i]);
+            }
+        }
+
+        document.write(numerosFiltrados);
+
+        // Ejercicio 2
+        document.write("<h2>Ejercicio 2</h2>")
+        var array1 = [1, 2, 3];
+        var array2 = [3, 4, 5];
+
+        for (let i = 0; i < array1.length; i++) {
+            for (let j = 0; j < array2.length; j++) {
+                if (array1[i] == array2[j]) {
+                    array2.splice(j, 1);
+                }
+            }
+        }
+
+        var array3 = array1.concat(array2);
+
+        document.write(array3);
+
+        // Ejercicio 3
+        document.write("<h2>Ejercicio 3</h2>");
+        var numeros2 = [8, 2, 10, 5, 7];
+        var maximo = -Infinity;
+        var minimo = Infinity;
+
+        for (let i = 0; i < numeros2.length; i++) {
+            if (numeros2[i] > maximo) {
+                maximo = numeros[i];
+            }
+
+            if (numeros2[i] < minimo) {
+                minimo = numeros2[i];
+            }
+        }
+
+        document.write("<p>Máximo: " + maximo + "</p>");
+        document.write("<p>Mínimo: " + minimo + "</p>");
+
+        // Ejercicio 4
+        document.write("<h2>Ejercicio 4</h2>");
+        var palabras = ["manzana", "banana", "manzana", "naranja", "manzana"];
+        var palabraRepetida;
+        var contador = 1;
+        var contadorAnterior = 0;
+        var contadorPalabraRepe;
+
+        palabras.sort();
+
+        for (let i = 0; i < palabras.length; i++) {
+            if (palabras[i] == palabras[i+1]) {
+                contador++;
+            } else {
+                if (contador > contadorAnterior) {
+                    palabraRepetida = palabras[i];
+                    contadorPalabraRepe = contador;
+                }
+
+                contadorAnterior = contador;
+                contador = 1;
+            }
+        }
+
+        document.write("<p>" + palabraRepetida + " - " + contadorPalabraRepe + " veces</p>");
+
+        // Ejercicio 5
+        document.write("<h2>Ejercicio 5</h2>");
+        function invertirArray(arraySinInvertir) {
+            let arrayInvertido = [];
+
+            for (let i = arraySinInvertir.length - 1; i >= 0; i--) {
+                arrayInvertido.push(arraySinInvertir[i]);
+            }
+
+            return arrayInvertido;
+        }
+
+        // Ejemplo con array numeros del ejercicio 1
+        document.write(invertirArray(numeros));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
