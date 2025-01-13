@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de datos</title>
+</head>
+
+<body>
+    <script>
+        var valores = [56, "Chocolate", -14, "4", "Juan", 89.15, "77", "10", "Hola", "!"];
+        var numeros = [];
+        var cadenas = [];
+        var noNumeros = [];
+        var temporal;
+
+        for (let i = 0; i < valores.length; i++) {
+            temporal = valores[i];
+            if (typeof temporal === "string") {
+                if (isNaN(parseInt(temporal))) {
+                    noNumeros.push(temporal);
+                } else {
+                    numeros.push(parseInt(temporal));
+                }
+            } else {
+                cadenas.push(temporal.toString());
+            }
+        }
+
+        document.write("<h1>Array valores</h1>");
+        document.write("<ul>");
+        for (i = 0; i < valores.length; i++) {
+            document.write("<li>" + valores[i] + "</li>");
+        }
+        document.write("</ul>");
+
+        document.write("<h1>Array números</h1>");
+        document.write("<ul>");
+        for (i = 0; i < numeros.length; i++) {
+            document.write("<li>" + numeros[i] + "</li>");
+        }
+        document.write("</ul>");
+
+        document.write("<h1>Array cadenas</h1>");
+        document.write("<ul>");
+        for (i = 0; i < cadenas.length; i++) {
+            document.write("<li>" + cadenas[i] + "</li>");
+        }
+        document.write("</ul>");
+
+        document.write("<h1>Array no números</h1>");
+        document.write("<ul>");
+        for (i = 0; i < noNumeros.length; i++) {
+            document.write("<li>" + noNumeros[i] + "</li>");
+        }
+        document.write("</ul>");
+    </script>
+</body>
+
+</html>
