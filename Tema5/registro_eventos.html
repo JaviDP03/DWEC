@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de eventos</title>
+    <style>
+        h3 {
+            cursor: default;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Registro de eventos</h1>
+    <h3 onclick="cambiarVerde(this)">Click para cambiar el color a verde</h3>
+    <h3 id="textoFuente">Pon el ratón aquí para cambiar el color a rojo</h3>
+
+    <script>
+        function cambiarVerde(elemento) {
+            elemento.style.color = "green";
+        }
+
+        document.getElementById("textoFuente").addEventListener("mouseover", function () {
+            this.style.color = "red";
+        });
+    </script>
+</body>
+
+</html>
