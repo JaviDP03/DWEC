@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <h1>Validación de contraseñas</h1>
+    <p>Introduce tu contraseña:</p>
+    <form method="POST" id="form_contrasenna">
+        <p>
+            <label for="password">Contraseña: </label>
+            <input type="password" name="password" id="password">
+        </p>
+        <p>
+            <label for="password2">Repite la contraseña: </label>
+            <input type="password" name="password2" id="password2">
+        </p>
+        <input type="submit" value="Validar">
+    </form>
+
+    <script>
+        document.getElementById('form_contrasenna').addEventListener('submit', function (event) {
+            validarContrasenna();
+        });
+
+        function validarContrasenna() {
+            let password = document.getElementById('password').value;
+            let password2 = document.getElementById('password2').value;
+
+            if (password === '' || password2 === '') {
+                alert('Debes rellenar ambos campos');
+                return;
+            }
+
+            if (password === password2) {
+                alert('Las contraseñas coinciden');
+            } else {
+                alert('Las contraseñas no coinciden');
+            }
+        }
+    </script>
+</body>
+
+</html>
