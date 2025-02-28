@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos</title>
+</head>
+
+<body>
+    <h1>Lista de elementos</h1>
+    <textarea name="elementos" id="elementos" cols="30" rows="10" placeholder="Nuevo elemento de la lista"></textarea>
+    <p>
+        <button type="button" id="addElemento">Añadir elemento</button>
+        <button type="button" id="eliminarUltimoPar">Eliminar Último Par</button>
+    </p>
+    <div id="elementosCreados"></div>
+
+    <script>
+        document.getElementById("addElemento").addEventListener("click", addElemento);
+        document.getElementById("eliminarUltimoPar").addEventListener("click", eliminarUltimoPar);
+
+        function addElemento() {
+            let elemento = document.getElementById("elementos").value;
+            let elementoCreado = document.createElement(elemento);
+            elementoCreado.innerHTML = "Elemento " + document.getElementById("elementosCreados").childNodes.length;
+            document.getElementById("elementosCreados").appendChild(elementoCreado);
+        }
+
+        function eliminarUltimoPar() {
+            let longitudElementos = document.getElementById("elementosCreados").childNodes.length;
+
+            if (longitudElementos > 0) {
+                if (longitudElementos === 1) {
+                    alert("Sólo hay 1 elemento")
+                } else if (longitudElementos % 2 === 0) {
+                    document.getElementById("elementosCreados").removeChild(document.getElementById("elementosCreados").lastChild);
+                } else {
+                    document.getElementById("elementosCreados").removeChild(document.getElementById("elementosCreados").lastChild.previousSibling);
+                }
+            } else {
+                alert("No hay elementos para eliminar");
+            }
+        }
+    </script>
+</body>
+
+</html>
