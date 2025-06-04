@@ -6,7 +6,7 @@
 
 Este repositorio contiene ejercicios, prácticas y material del módulo **Desarrollo Web en Entorno Cliente** (DWEC) de 2ºDAW. El lenguaje principal trabajado es **JavaScript**.
 
-## Estructura del repositorio
+## 📁 Estructura del repositorio
 
 - **Tema1**  
   Introducción al desarrollo web y primeros pasos con HTML y CSS.
